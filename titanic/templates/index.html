@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Titanic Survival Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            /* Background image styles */
+            background-image: url('https://www.bochcenter.org/assets/img/titanic-header-bdd1c2a263.jpg'); /* Replace with your image filename */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            color: #ffffffaf;
+            
+        }
+        h2 {
+            color: #000000;
+        }
+        form {
+            max-width: 400px;
+            background: rgba(213, 236, 255, 0.726); /* white with transparency */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #0006;
+            color: #000;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 7px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+
+            margin-top: 20px;
+            background-color: #040e9c;
+            color: rgb(2, 2, 2);
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+ <center><h2><b>Titanic Survival Prediction</b></h2></center>   
+<center>
+    <form method="POST" action="/predict">
+
+        <label for="Pclass">Passenger Class (1 = 1st, 2 = 2nd, 3 = 3rd):</label>
+        <input type="number" id="Pclass" name="Pclass" min="1" max="3" required />
+
+        <label for="Sex">Sex:</label>
+        <select id="Sex" name="Sex" required>
+            <option value="" disabled selected>Select sex</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <label for="Age">Age:</label>
+        <input type="number" id="Age" name="Age" step="0.1" min="0" required />
+
+        <label for="SibSp">Number of Siblings/Spouses aboard:</label>
+        <input type="number" id="SibSp" name="SibSp" min="0" required />
+
+        <label for="Parch">Number of Parents/Children aboard:</label>
+        <input type="number" id="Parch" name="Parch" min="0" required />
+
+        <label for="Fare">Fare:</label>
+        <input type="number" id="Fare" name="Fare" step="0.01" min="0" required />
+
+        <label for="Embarked">Port of Embarkation:</label>
+        <select id="Embarked" name="Embarked" required>
+            <option value="" disabled selected>Select port</option>
+            <option value="C">Cherbourg</option>
+            <option value="Q">Queenstown</option>
+            <option value="S">Southampton</option>
+        </select>
+
+        <input type="submit" value="Predict" />
+    </center>
+
+    </form>
+
+</body>
+</html>

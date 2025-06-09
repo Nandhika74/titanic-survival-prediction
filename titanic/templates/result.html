@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prediction Result</title>
+  <style>
+    /* Full viewport height and flex centering */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center; /* center horizontally */
+      align-items: center;     /* center vertically */
+      background-image: url('https://www.itl.cat/pngfile/big/24-242473_titanic-hd-wallpaper-titanic-ship-hd.jpg');
+      background-size: cover;  /* cover entire background */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* keeps image fixed during scroll */
+    }
+
+    .result-box {
+      padding: 40px;
+      box-sizing: content-box;
+      max-width: 450px;
+      border-radius: 40px;
+      box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4);
+      transform: rotateX(5deg) rotateY(5deg);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      text-align: center;
+    }
+
+    .result-box:hover {
+      transform: rotateX(0deg) rotateY(0deg) scale(1.03);
+      box-shadow: 0 35px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: rgb(0, 0, 0);
+    }
+
+    p {
+      font-size: 26px;
+      font-weight: bold;
+      color: #007BFF;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 25px;
+      text-decoration: none;
+      background-color: #007BFF;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 680px) {
+      .result-box {
+        margin: 20px;
+        padding: 25px;
+        transform: none;
+      }
+
+      .result-box:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="result-box">
+    <h2>Prediction Result</h2>
+    <p>{{ prediction }}</p>
+    <a href="/">Try Again</a>
+  </div>
+
+</body>
+</html>
